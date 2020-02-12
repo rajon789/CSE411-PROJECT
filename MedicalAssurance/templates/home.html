@@ -1,3 +1,4 @@
+{% extends 'base.html' %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +7,16 @@
     <title>Document</title>
 </head>
 <body>
+    {% block content %}
     <h1>Welcome {{name}} to Homepage</h1>
+
+    <form action="add" method="post">
+
+        {% csrf_token %}
+        Enter 1st number: <input type="text" name = number1><br>
+        Enter 2nd number: <input type="text" name = number2><br>
+        <input type="submit">
+    </form>
+    {% endblock %} 
 </body>
 </html>
